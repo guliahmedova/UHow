@@ -3,6 +3,7 @@
     --purple-800: #9372ce;
     --bgColor: #f9f7fc;
     --sectionPadding: 8.75rem;
+    --sectionHalfPadding: 4.375rem;
     --pink: #fc6591;
 }
 /*RESET*/
@@ -256,7 +257,7 @@ section {
             & .cards_container {
                 margin-top: 2.5rem;
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(3, 1fr);
                 flex-wrap: wrap;
                 gap: 2rem;
                 width: 100%;
@@ -433,11 +434,15 @@ section {
         align-items: center;
         justify-content: center;
 
-        & h1 {
+        & .contact_title {
             font-weight: 700;
             font-size: 2rem;
             line-height: 1.3;
             margin-bottom: 1.25rem;
+            text-align: center;
+        }
+        & .contact_desc {
+            text-align: center;
         }
 
         & .btn {
@@ -454,6 +459,15 @@ section {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        & .img_col {
+            & .img_box {
+                width: 100%;
+                max-width: 100%;
+                & img {
+                    width: 100%;
+                }
+            }
+        }
 
         & .items {
             display: flex;
@@ -464,9 +478,7 @@ section {
                     display: flex;
                     align-items: center;
                     gap: 10px;
-
                     margin-bottom: 1.5rem;
-
                     & .icon {
                         color: var(--purple-900);
                         border: 1px solid var(--purple-900);
@@ -519,6 +531,7 @@ section {
         color: gray;
         & p {
             margin-bottom: 1.25rem;
+            text-align: center;
         }
 
         & .footer_mebu {
@@ -560,10 +573,10 @@ section {
 
 @media screen and (max-width: 75rem) {
     .primary_container {
-        width: 90%;
+        width: 95%;
     }
     .secondary_container {
-        width: 90%;
+        width: 90% !important;
     }
     .wrapper {
         & .header {
@@ -579,6 +592,18 @@ section {
 @media screen and (max-width: 60rem) {
     .section_title {
         width: 100% !important;
+    }
+    .primary_container {
+        width: 100% !important;
+    }
+    .popular_articles {
+        & .articles {
+            & .article {
+                & .article_title {
+                    margin-bottom: 2rem !important;
+                }
+            }
+        }
     }
     .wrapper {
         & .header {
@@ -635,18 +660,50 @@ section {
             }
         }
     }
+    .article_categories {
+        & .cards_container {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+}
+@media screen and (max-width: 48rem) {
+    section {
+        padding: var(--sectionHalfPadding) 0;
+    }
+    .contact {
+        & .contact_title {
+            width: 90%;
+            font-size: 1.7rem !important;
+        }
+        & .contact_desc {
+            width: 95%;
+        }
+        & .btn {
+            margin-top: 2.5rem !important;
+        }
+    }
+
+    .about {
+        & .cols {
+            width: 100%;
+            padding: 0 1rem;
+            flex-direction: column;
+            & .img_col {
+                margin-bottom: 2.5rem;
+            }
+
+            & .items_col {
+                width: 100%;
+            }
+        }
+    }
 }
 @media screen and (max-width: 40rem) {
-    /* .primary_container {
-        width: 100%;
-        margin: 0 auto;
-    } */
-    /* .cards_container {
-        & .card {
-            width: 93%;
-            margin: 0 auto;
+    .article_categories {
+        & .cards_container {
+            grid-template-columns: repeat(1, 1fr) !important;
         }
-    } */
+    }
     .section_desc {
         width: 80%;
         margin: 0 auto;
@@ -671,9 +728,25 @@ section {
             }
         }
     }
+
+    .about {
+        & .img_col {
+            width: 100%;
+        }
+        & .cols{
+            padding: 0;
+        }
+    }
 }
 @media screen and (max-width: 23rem) {
     .section_title {
         width: 100% !important;
+    }
+    .footer{
+        & .footer_list{
+            & p{
+                width: 60% !important;
+            }
+        }
     }
 }
