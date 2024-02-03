@@ -9,3 +9,4 @@ document.getElementById('close_sidebar').addEventListener('click', function () {
     document.getElementById('wrapper').style.marginLeft = "0";
     document.getElementById('wrapper').style.overflow = "unset";
 });
+

@@ -313,10 +313,17 @@ section {
         /*QUESTIONS*/
         & .questions {
             & .section_desc {
-                width: 65%;
+                width: 85%;
             }
             & .section_title {
                 width: 65%;
+            }
+
+            & .col-4{
+                width: 40%;
+            }
+            & .col-8{
+                width: 60%;
             }
 
             & .stepper {
@@ -338,7 +345,7 @@ section {
                         border: 1px solid var(--purple-900);
                     }
                     & .line {
-                        top: 23px;
+                        top: 18px;
                         left: 8.5px;
                         height: 100%;
                         position: absolute;
@@ -463,9 +470,6 @@ section {
             & .img_box {
                 width: 100%;
                 max-width: 100%;
-                & img {
-                    width: 100%;
-                }
             }
         }
 
@@ -630,7 +634,7 @@ section {
                     & .stepper {
                         margin-top: 2.5rem;
                         & .v-stepper {
-                            display: none;
+                            display: none !important;
                         }
                     }
 
@@ -665,6 +669,24 @@ section {
             grid-template-columns: repeat(2, 1fr) !important;
         }
     }
+
+    .questions{
+        & .col-4{
+            width: 100% !important;
+        }
+        & .col-8{
+            width: 100% !important;
+            margin-top: 2rem;
+
+            & .stepper{
+                & .step{
+                    & .v-stepper{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width: 48rem) {
     section {
@@ -697,6 +719,8 @@ section {
             }
         }
     }
+
+   
 }
 @media screen and (max-width: 40rem) {
     .article_categories {
@@ -708,6 +732,12 @@ section {
         width: 80%;
         margin: 0 auto;
         margin-top: 1.5rem;
+    }
+    .questions{
+        & .section_desc{
+            margin: 1rem 0;
+            width: 100% !important;
+        }
     }
     .section_title {
         width: 100% !important;
